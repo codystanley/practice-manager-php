@@ -10,9 +10,7 @@ $url = "https://www.appsheet.com/api/v2/apps/$appId/tables/$tableName/Find";
 // Create the request body (adjust Locale, Location, Timezone, and UserSettings as needed)
 $requestBody = json_encode([
     "Action" => "Find",
-    "Properties" => [
-        "Selector" => ["Select(Practices[PracticeID], Practices[PracticeName])"],
-    ],
+    "Properties" => (object)[], // Leave this empty to fetch all properties
     "Rows" => (object)[] // Leave this empty to fetch all rows
 ]);
 
@@ -38,10 +36,6 @@ if (curl_errno($ch)) {
 // Close cURL session
 curl_close($ch);
 
-$practices = json_decode($response, true);
-
-var_dump($practices); // For debugging purposes
-
-// 2. Output practice data as JSON for JavaScript to use
-echo json_encode($practices);
+// Directly echo the response, as it's already valid JSON
+echo $response;
 ?>
