@@ -22,8 +22,8 @@ fetch('get_practices.php') // Replace with the correct path to your PHP file
         // Populate dropdown with practices
         practices.forEach(practice => {
             const option = document.createElement('option');
-            option.value = practice.ID; // Assuming each practice has an ID
-            option.text = practice.Name; // Assuming each practice has a Name field
+            option.value = practice.practice_id; // Assuming each practice has an ID
+            option.text = practice.practice_full_name; // Assuming each practice has a Name field
             practiceDropdown.add(option);
         });
     });
@@ -36,8 +36,8 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
         .then(practices => {
             const selectedPractice = practices.find(practice => practice.ID === selectedPracticeId);
             // Assuming you have elements with IDs like practiceName, practiceAddress, etc.
-            document.getElementById('practiceName').textContent = selectedPractice.Name;
-            document.getElementById('practiceAddress').textContent = selectedPractice.Address;
+            document.getElementById('practiceName').textContent = selectedPractice.practice_full_name;
+            document.getElementById('practiceAddress').textContent = selectedPractice.practice_address;
             // ... Display other practice details
         });
 });
