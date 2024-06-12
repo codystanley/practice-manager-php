@@ -16,7 +16,6 @@
         // Fetch practice data when the page loads
 fetch('get_practices.php') // Replace with the correct path to your PHP file
     .then(response => response.json())
-    console.log(response)
     .then(practices => {
         const practiceDropdown = document.getElementById('practiceDropdown');
 
