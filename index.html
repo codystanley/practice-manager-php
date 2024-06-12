@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <select id="practiceDropdown">
+    </select>
+
+    <h2>Practice Details:</h2>
+    <div id="practiceName"></div>
+    <div id="practiceAddress"></div>
+
+    <script>
+        // Fetch practice data when the page loads
+fetch('get_practices.php') // Replace with the correct path to your PHP file
+    .then(response => response.json())
+    .then(practices => {
+        const practiceDropdown = document.getElementById('practiceDropdown');
+
+        // Populate dropdown with practices
+        practices.forEach(practice => {
+            const option = document.createElement('option');
+            option.value = practice.ID; // Assuming each practice has an ID
+            option.text = practice.Name; // Assuming each practice has a Name field
+            practiceDropdown.add(option);
+        });
+    });
+
+// Display practice details when a practice is selected
+document.getElementById('practiceDropdown').addEventListener('change', function() {
+    const selectedPracticeId = this.value;
+    fetch('get_practices.php')
+        .then(response => response.json())
+        .then(practices => {
+            const selectedPractice = practices.find(practice => practice.ID === selectedPracticeId);
+            // Assuming you have elements with IDs like practiceName, practiceAddress, etc.
+            document.getElementById('practiceName').textContent = selectedPractice.Name;
+            document.getElementById('practiceAddress').textContent = selectedPractice.Address;
+            // ... Display other practice details
+        });
+});
+
+    </script>
+
+</html>
