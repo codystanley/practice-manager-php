@@ -12,7 +12,11 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-4 gy-4" id="practiceSelection">
+            <div class="col-4 gy-4" id="practiceHeader">
+                <h4 id="practiceName"></h4>
+            </div><!-- #practiceHeader -->
+
+            <div class="col-8 gy-4" id="practiceSelection">
                 <select id="practiceDropdown" class="form-select" aria-label="Select a Practice">
                     <option>Select a Practice</option>
                 </select>
@@ -21,14 +25,13 @@
 
         <div class="row">
                 
-            <div class="col-4 gy-4" id="officeInfo">
+            <div class="col-6 gy-4" id="officeInfo">
                 <h4>Office Information</h4>
                 <div class="card">
+                    <div class="card-header badge text-bg-primary" id="practiceAddress"></div>
                     <div class="card-body">
-                        <div class="card-title" id="practiceAddress"></div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item" id="officePhone">
-
                             <li class="list-group-item" id="backlinePhone"></li>
                             <li class="list-group-item" id="fax"></li>
                           </ul>
@@ -36,13 +39,17 @@
                 </div>
             </div><!-- #officeInfo -->
 
-            <div class="col-4 gy-4" id="officeHours">
+            <div class="col-6 gy-4" id="officeHours">
                 <h4>Office Hours</h4>
             </div><!-- #officeHours -->
 
             <div class="col-4 gy-4" id="contactInfo">
                 <h4>Contacts</h4>
-                <div id="contactName"></div>
+                    <div class="card">
+                        <div class="card-header badge text-bg-danger" id="contactType"></div>
+                        <div class="card-title" id="contactName"></div>
+                        
+                    </div>
             </div><!-- #contactInfo -->
         </div><!-- .row -->
     </div><!-- .container  -->

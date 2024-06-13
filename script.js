@@ -26,6 +26,7 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     
     .then(practices => {
         const selectedPractice = practices.find(practice => practice.practice_id === selectedPracticeId);
+        document.getElementById('practiceName').textContent = selectedPractice.practice_name;
         document.getElementById('practiceAddress').textContent = selectedPractice.practice_address;
         document.getElementById('officePhone').textContent = "Office: " + selectedPractice.phone_office;
         document.getElementById('backlinePhone').textContent = "Backline: " + selectedPractice.phone_backline;
@@ -44,6 +45,11 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     
     .then(contacts => {
         const selectedPractice = contacts.find(contact => contact.practice === selectedPracticeId);
-        document.getElementById('contactName').textContent = selectedPractice.first_name;
+        document.getElementById('contactName').textContent = selectedPractice.first_name + ' ' + selectedPractice.last_name + ' ' + selectedPractice.title;
+        document.getElementById('contactType').textContent = selectedPractice.contact_type;
+        document.getElementById('contactOfficePhone').textContent = selectedPractice.office_phone;
+        document.getElementById('contactCellPhone').textContent = selectedPractice.cell_phone;
+        document.getElementById('contactOtherPhone').textContent = selectedPractice.other_phone;
+        document.getElementById('contactEmail').textContent = selectedPractice.email;
     });
 });
