@@ -12,26 +12,40 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-4 gy-2">
+            <div class="col-4 gy-4" id="practiceSelection">
                 <select id="practiceDropdown" class="form-select" aria-label="Select a Practice">
                     <option>Select a Practice</option>
                 </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 gy-4">
+            </div><!-- #practiceSelection -->
+        </div> <!-- .row -->
 
-                <h2>Practice Details:</h2>
-                <div id="practiceGroup"></div>
-                <div><span id="practiceNameLabel">Practice:</span><span id="practiceName"></span></div>
-                <div><span id="practiceAddressLabel">Address: </span><span id="practiceAddress"></span></div>
-                <div id="practiceAddress"></div>
-                <div id="officePhone"></div>
-                <div id="backlinePhone"></div>
-                <div id="fax"></div>
-            </div>
-        </div>
-    </div>
+        <div class="row">
+                
+            <div class="col-4 gy-4" id="officeInfo">
+                <h4>Office Information</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title" id="practiceAddress"></div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="officePhone">
+
+                            <li class="list-group-item" id="backlinePhone"></li>
+                            <li class="list-group-item" id="fax"></li>
+                          </ul>
+                    </div>
+                </div>
+            </div><!-- #officeInfo -->
+
+            <div class="col-4 gy-4" id="officeHours">
+                <h4>Office Hours</h4>
+            </div><!-- #officeHours -->
+
+            <div class="col-4 gy-4" id="contactInfo">
+                <h4>Contacts</h4>
+                <div id="contactName"></div>
+            </div><!-- #contactInfo -->
+        </div><!-- .row -->
+    </div><!-- .container  -->
 
     <script src="script.js"></script>
 

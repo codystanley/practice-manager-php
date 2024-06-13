@@ -1,9 +1,8 @@
 <?php
-// 1. Fetch practice data from your AppSheet app
-// (You'll need to replace these placeholders with your actual AppSheet API configuration)
+// 1. Fetch contact data from your AppSheet app
 $appId = "d3d7048d-96b6-4450-b683-37ae994e1c21";
 $appAccessKey = "V2-wQih4-IOxVa-43Luy-gwk1v-3r4uA-PEEso-eEnsw-HpyY9";
-$tableName = "Practices"; // Assuming your table is named "Practices"
+$tableName = "Contacts"; // Assuming your table is named "Practices"
 
 $url = "https://www.appsheet.com/api/v2/apps/$appId/tables/$tableName/Find";
 
@@ -26,7 +25,7 @@ curl_setopt($ch, CURLOPT_POST, true);// Use POST method
 curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody); // Set the request body
 
 // Execute cURL session
-$practiceResponse = curl_exec($ch);
+$contactResponse = curl_exec($ch);
 
 // Check for errors
 if (curl_errno($ch)) {
@@ -37,5 +36,5 @@ if (curl_errno($ch)) {
 curl_close($ch);
 
 // Output the response
-echo $practiceResponse;
+echo $contactResponse;
 ?>
