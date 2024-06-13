@@ -1,5 +1,5 @@
 <?php
-// 1. Fetch contact data from your AppSheet app
+// Fetch contact data from your AppSheet app
 $appId = "d3d7048d-96b6-4450-b683-37ae994e1c21";
 $appAccessKey = "V2-wQih4-IOxVa-43Luy-gwk1v-3r4uA-PEEso-eEnsw-HpyY9";
 $tableName = "Contacts"; // Assuming your table is named "Practices"
