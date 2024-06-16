@@ -1,8 +1,7 @@
 <?php
 require_once 'connections.php';
 
-// Fetch contact data from your AppSheet app
-$tableName = "OfficeHours"; // Assuming your table is named "Practices"
+$tableName = "OfficeHours";
 
 $url = "https://www.appsheet.com/api/v2/apps/$appId/tables/$tableName/Find";
 
@@ -21,8 +20,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "ApplicationAccessKey: $appAccessKey",
     "Content-Type: application/json"
 ]);
-curl_setopt($ch, CURLOPT_POST, true);// Use POST method
-curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody); // Set the request body
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody);
 
 // Execute cURL session
 $hoursResponse = curl_exec($ch);

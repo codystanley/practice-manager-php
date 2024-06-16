@@ -50,11 +50,13 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     .then(contactResponse => contactResponse.json())
     
     .then(contacts => {
+        contacts.foreach(contact => {
         const selectedPractice = contacts.find(contact => contact.con_prac === selectedPracticeId);
         document.getElementById('contactName').textContent = selectedPractice._con_full_name;
-        document.getElementById('contactType').textContent = selectedPractice.contact_type;
+        document.getElementById('contactType').textContent = selectedPractice.con_type;
         document.getElementById('contactCellPhone').textContent = selectedPractice.con_cell;
         document.getElementById('contactOtherPhone').textContent = selectedPractice.con_other;
         document.getElementById('contactEmail').textContent = selectedPractice.con_email;
+    })
     });
 });
