@@ -1,4 +1,6 @@
-// Fetch practice data when the page loads
+/* ------------------------ */
+/* Practice Dropdown Loader */
+/* ------------------------ */
 fetch('get_practices.php')
 
 .then(practiceResponse => practiceResponse.json())
@@ -9,13 +11,15 @@ fetch('get_practices.php')
     // Populate dropdown with practices
     practices.forEach(practice => {
         const option = document.createElement('option');
-        option.value = practice.practice_id; // Assuming each practice has an ID
-        option.text = practice.practice_full_name; // Assuming each practice has a Name field
+        option.value = practice.prac_id;
+        option.text = practice.prac_long_name;
         practiceDropdown.add(option);
     });
 });
 
-// Display practice details when a practice is selected
+/* ------------------------- */
+/* Office Information Loader */
+/* ------------------------- */
 document.getElementById('practiceDropdown').addEventListener('change', function() {
     
     const selectedPracticeId = this.value;
@@ -25,16 +29,18 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     .then(practiceResponse => practiceResponse.json())
     
     .then(practices => {
-        const selectedPractice = practices.find(practice => practice.practice_id === selectedPracticeId);
-        document.getElementById('practiceName').textContent = selectedPractice.practice_name;
-        document.getElementById('practiceAddress').textContent = selectedPractice.practice_address;
-        document.getElementById('officePhone').textContent = "Office: " + selectedPractice.phone_office;
-        document.getElementById('backlinePhone').textContent = "Backline: " + selectedPractice.phone_backline;
-        document.getElementById('fax').textContent = "Fax: " + selectedPractice.fax_office;
+        const selectedPractice = practices.find(practice => practice.prac_id === selectedPracticeId);
+        document.getElementById('practiceName').textContent = selectedPractice.prac_name;
+        document.getElementById('practiceAddress').textContent = selectedPractice.prac_address;
+        document.getElementById('officePhone').textContent = "Office: " + selectedPractice.office_phone;
+        document.getElementById('backlinePhone').textContent = "Backline: " + selectedPractice.backline_phone;
+        document.getElementById('fax').textContent = "Fax: " + selectedPractice.fax_phone;
     });
 });
 
-// Display contact details when a practice is selected
+/* --------------------------- */
+/* Contacts Information Loader */
+/* --------------------------- */
 document.getElementById('practiceDropdown').addEventListener('change', function() {
     
     const selectedPracticeId = this.value;
@@ -44,12 +50,11 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     .then(contactResponse => contactResponse.json())
     
     .then(contacts => {
-        const selectedPractice = contacts.find(contact => contact.practice === selectedPracticeId);
-        document.getElementById('contactName').textContent = selectedPractice.first_name + ' ' + selectedPractice.last_name + ' ' + selectedPractice.title;
+        const selectedPractice = contacts.find(contact => contact.con_prac === selectedPracticeId);
+        document.getElementById('contactName').textContent = selectedPractice._con_full_name;
         document.getElementById('contactType').textContent = selectedPractice.contact_type;
-        document.getElementById('contactOfficePhone').textContent = selectedPractice.office_phone;
-        document.getElementById('contactCellPhone').textContent = selectedPractice.cell_phone;
-        document.getElementById('contactOtherPhone').textContent = selectedPractice.other_phone;
-        document.getElementById('contactEmail').textContent = selectedPractice.email;
+        document.getElementById('contactCellPhone').textContent = selectedPractice.con_cell;
+        document.getElementById('contactOtherPhone').textContent = selectedPractice.con_other;
+        document.getElementById('contactEmail').textContent = selectedPractice.con_email;
     });
 });

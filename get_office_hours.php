@@ -1,8 +1,8 @@
 <?php
 require_once 'connections.php';
 
-// Fetch practice data from the AppSheet app
-$tableName = "Practices";
+// Fetch contact data from your AppSheet app
+$tableName = "OfficeHours"; // Assuming your table is named "Practices"
 
 $url = "https://www.appsheet.com/api/v2/apps/$appId/tables/$tableName/Find";
 
@@ -25,16 +25,18 @@ curl_setopt($ch, CURLOPT_POST, true);// Use POST method
 curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody); // Set the request body
 
 // Execute cURL session
-$practiceResponse = curl_exec($ch);
+$hoursResponse = curl_exec($ch);
 
 // Check for errors
 if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
+} else {
+    print_r($hoursResponse);
 }
 
 // Close cURL session
 curl_close($ch);
 
 // Output the response
-echo $practiceResponse;
+echo $hoursResponse;
 ?>
