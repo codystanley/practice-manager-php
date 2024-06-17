@@ -173,6 +173,6 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     
     .then(preference => {
         const selectedPractice = preference.find(preference => preference.prac_id === selectedPracticeId);
-        document.getElementById('caerAdvice').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
+        document.getElementById('careAdvice').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
     });
 });
