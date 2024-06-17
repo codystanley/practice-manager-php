@@ -35,6 +35,8 @@ if (curl_errno($ch)) {
 // Close cURL session
 curl_close($ch);
 
+header('Content-Type: application/json'); // Set the header
+
 // Output the response
 echo $practiceResponse;
 ?>
