@@ -2,9 +2,6 @@
 /* Practice Dropdown Loader */
 /* ------------------------ */
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 fetch('get_practices.php')
 
 .then(practiceResponse => practiceResponse.json())

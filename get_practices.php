@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // Fetch practice data from the AppSheet app
 $appId = "1e55ea2b-9ba6-4f53-bc44-694c4e5bc0d6";
