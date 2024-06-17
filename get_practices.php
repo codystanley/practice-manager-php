@@ -1,10 +1,8 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 // Fetch practice data from the AppSheet app
-$appId = "1e55ea2b-9ba6-4f53-bc44-694c4e5bc0d6";
-$appAccessKey = "V2-fOQpn-8ZvUh-SGouy-HfhFY-D3DxM-MoOah-rKUWI-syAMX";
+require_once 'connections.php';
+
 $tableName = "Practices";
 
 $url = "https://www.appsheet.com/api/v2/apps/$appId/tables/$tableName/Find";
