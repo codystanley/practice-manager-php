@@ -159,3 +159,20 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
         }
     });
 });
+
+/* ------------------- */
+/* Prefereneces Loader */
+/* ------------------- */
+document.getElementById('practiceDropdown').addEventListener('change', function() {
+    
+    const selectedPracticeId = this.value;
+    
+    fetch('get_preferences.php')
+    
+    .then(preferencesResponse => preferencesResponse.json())
+    
+    .then(preference => {
+        const selectedPractice = preference.find(preference => preference.prac_id === selectedPracticeId);
+        document.getElementById('caerAdvice').innerHTML = <strong>Care Advice Detail: </strong> + selectedPractice.care_advice;
+    });
+});
