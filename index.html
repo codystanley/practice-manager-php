@@ -27,89 +27,104 @@
         </div><!-- .row -->
 
         <div class="row">
-            <div class="col-6 gy-4" id="officeInfo">
-                <h5>Office Information <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
-
-                <div class="card mb-3">
-                    <div class="card-header">Address</div>
-
-                    <div class="card-body">
-                        <div id="practiceAddress" class="card-text"><!-- script.js content--></div>
+            
+                <h5 id="officeInfo">Office Information <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
+                <div class="col-4">
+                    <div class="card mb-3">
+                        <div class="card-header">Address</div>
+    
+                        <div class="card-body">
+                            <div id="practiceAddress" class="card-text"><!-- script.js content--></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div id="phonesCard" class="card mb-3">
+                        <div class="card-header">Phones/Fax</div>
+                        <ul class="list-group list-group-flush">
+                            <li id="officePhone" class="list-group-item"><!-- script.js content--></li>
+                            <li id="backlinePhone" class="list-group-item"><!-- script.js content--></li>
+                            <li id="fax" class="list-group-item"><!-- script.js content--></li>
+                          </ul>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div id="answeringServiceCard" class="card mb-3">
+                        <div class="card-header">Answering Service</div>
+                        <ul class="list-group list-group-flush">
+                            <li id="answeringService" class="list-group-item"><!-- script.js content--></li>
+                            <li id="forwardLine" class="list-group-item"><!-- script.js content--></li>
+                            <li id="asAccount" class="list-group-item"><!-- script.js content--></li>
+                          </ul>
                     </div>
                 </div>
 
-                <div id="phonesCard" class="card mb-3">
-                    <div class="card-header">Phones/Fax</div>
-                    <ul class="list-group list-group-flush">
-                        <li id="officePhone" class="list-group-item"><!-- script.js content--></li>
-                        <li id="backlinePhone" class="list-group-item"><!-- script.js content--></li>
-                        <li id="fax" class="list-group-item"><!-- script.js content--></li>
-                      </ul>
-                </div>
+            
+                <h5 id="officeHours">Scheduling <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
 
-                <div id="answeringServiceCard" class="card mb-3">
-                    <div class="card-header">Phones/Fax</div>
-                    <ul class="list-group list-group-flush">
-                        <li id="answeringService" class="list-group-item"><!-- script.js content--></li>
-                        <li id="asPriority" class="list-group-item"><!-- script.js content--></li>
-                        <li id="asAccount" class="list-group-item"><!-- script.js content--></li>
-                      </ul>
+                <div class="col-6">
+                    <div id="hoursCard" class="card mb-3">
+                        <div class="card-header">Office Hours</div>
+                        <ul class="list-group list-group-flush">
+                            <li id="timezone" class="list-group-item"><!-- script.js content--></li>
+                            <li id="monday" class="list-group-item"><!-- script.js content--></li>
+                            <li id="tuesday" class="list-group-item"><!-- script.js content--></li>
+                            <li id="wednesday" class="list-group-item"><!-- script.js content--></li>
+                            <li id="thursday" class="list-group-item"><!-- script.js content--></li>
+                            <li id="friday" class="list-group-item"><!-- script.js content--></li>
+                            <li id="saturday" class="list-group-item"><!-- script.js content--></li>
+                            <li id="sunday" class="list-group-item"><!-- script.js content--></li>
+                        </ul>
+                    </div><!-- #hoursCard-->
                 </div>
                 
-
-            </div><!-- #officeInfo -->
-
-            <div class="col-6 gy-4" id="officeHours">
-                <h5>Scheduling <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
-
-                <div id="hoursCard" class="card mb-3">
-                    <div class="card-header">Office Hours</div>
-                    <ul class="list-group list-group-flush">
-                        <li id="timezone" class="list-group-item"><!-- script.js content--></li>
-                        <li id="monday" class="list-group-item"><!-- script.js content--></li>
-                        <li id="tuesday" class="list-group-item"><!-- script.js content--></li>
-                        <li id="wednesday" class="list-group-item"><!-- script.js content--></li>
-                        <li id="thursday" class="list-group-item"><!-- script.js content--></li>
-                        <li id="friday" class="list-group-item"><!-- script.js content--></li>
-                        <li id="saturday" class="list-group-item"><!-- script.js content--></li>
-                        <li id="sunday" class="list-group-item"><!-- script.js content--></li>
-                    </ul>
-                </div><!-- #hoursCard-->
-                
-                <div id="onCallCard" class="card mb-3">
-                    <div class="card-header">On-Call Schedule Info</div>
-                    <ul class="list-group list-group-flush">
-                        <li id="schedStart" class="list-group-item"><!-- script.js content--></li>
-                        <li id="default" class="list-group-item"><!-- script.js content--></li>
-                        <li id="ocNotes" class="list-group-item"><!-- script.js content--></li>
-                    </ul>
-                </div><!-- #onCallCard-->
-
-            </div><!-- #officeHours -->
+                <div class="col-6">
+                    <div id="onCallCard" class="card mb-3">
+                        <div class="card-header">On-Call Schedule Info</div>
+                        <ul class="list-group list-group-flush">
+                            <li id="schedStart" class="list-group-item"><!-- script.js content--></li>
+                            <li id="default" class="list-group-item"><!-- script.js content--></li>
+                            <li id="ocNotes" class="list-group-item"><!-- script.js content--></li>
+                        </ul>
+                    </div><!-- #onCallCard-->
+                </div>
         </div><!-- .row -->
 
-        <div class="row">
+        <div class="row" id="contactInfo">
 
-            <div class="col-6 gy-4" id="contactInfo">
-                <h5>Contacts <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
+            <h5>Contacts <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
                 
                 <!-- script.js content-->
 
-            </div><!-- #contactInfo -->
+        </div><!-- #contactInfo -->
 
-            <div class="col-6 gy-4" id="preferences">
-                <h5>Preferences <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
+            <div class="row">
+                <h5 id="preferences">Preferences <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
             
-                <div id="preferenceCard" class="card mb-3">
-                    <div class="card-header">Protocol Preferences</div>
-                    <ul class="list-group list-group-flush">
-                        <li id="careAdvice" class="list-group-item"><!-- script.js content--></li>
-                        <li id="iaQuestions" class="list-group-item"><!-- script.js content--></li>
-                    </ul>
-                </div><!-- #onCallCard-->
+                <div class="col-6">
+                    <div id="edCard" class="card mb-3">
+                        <div class="card-header">ED/UC & Location Preferences</div>
+                        <ul class="list-group list-group-flush">
+                            <li id="edUC" class="list-group-item"><!-- script.js content--></li>
+                            <li id="locations" class="list-group-item"><!-- script.js content--></li>
+                        </ul>
+                    </div><!-- #protocolCard-->
+                </div>
+                
+                <div class="col-6">
+                    <div id="protocolCard" class="card mb-3">
+                        <div class="card-header">Protocol Preferences</div>
+                        <ul class="list-group list-group-flush">
+                            <li id="careAdvice" class="list-group-item"><!-- script.js content--></li>
+                            <li id="iaQuestions" class="list-group-item"><!-- script.js content--></li>
+                        </ul>
+                    </div><!-- #protocolCard-->
+                </div>
+
             
-            </div>
-        </div><!-- .row -->
+            </div><!-- .row -->
     </div><!-- .container  -->
 
     <script src="script.js"></script>

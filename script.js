@@ -36,7 +36,9 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
         document.getElementById('officePhone').innerHTML = "<strong>Office:</strong> " + selectedPractice.office_phone;
         document.getElementById('backlinePhone').innerHTML = "<strong>Backline:</strong> " + selectedPractice.backline_phone;
         document.getElementById('fax').innerHTML = "<strong>Fax:</strong> " + selectedPractice.fax_phone;
-        document.getElementById('').innerHTML = "<strong>Answering Service:</strong> " + selectedPractice.answering_service;
+        document.getElementById('answeringService').innerHTML = "<strong>Answering Service:</strong> " + selectedPractice.as_Name;
+        document.getElementById('forwardLine').innerHTML = "<strong>Forwarding Line:</strong> " + selectedPractice.as_forwarding_phone;
+        document.getElementById('asAccount').innerHTML = "<strong>Account:</strong> " + selectedPractice.as_account_id;
 
     });
 });
@@ -93,8 +95,6 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
         });
 });
 
-
-
 /* --------------------------- */
 /* Contacts Information Loader */
 /* --------------------------- */
@@ -119,8 +119,12 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     });
 
     for (const type in contactsByType) {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("col-4");
+
         const card = document.createElement("div");
         card.classList.add("card", "mb-3");
+        wrapper.appendChild(card);
 
         // Create card header with the type as the title
         const cardHeader = document.createElement("div");
@@ -175,6 +179,8 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     
     .then(preference => {
         const selectedPractice = preference.find(preference => preference.pref_prac === selectedPracticeId);
+        document.getElementById('edUC').innerHTML = "<strong>ED/UC Preference: </strong>" + selectedPractice.pref_ed_uc;
+        document.getElementById('locations').innerHTML = "<strong>Additional Locations: </strong>" + selectedPractice.pref_other_locations;
         document.getElementById('careAdvice').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
         document.getElementById('iaQuestions').innerHTML = "<strong>Initial Assesment Questions: </strong>" + selectedPractice.ia_questions;
     });
