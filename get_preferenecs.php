@@ -24,7 +24,7 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody);
 
 // Execute cURL session
-$hoursResponse = curl_exec($ch);
+$preferencesResponse = curl_exec($ch);
 
 // Check for errors
 if (curl_errno($ch)) {
