@@ -174,7 +174,7 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     .then(preferencesResponse => preferencesResponse.json())
     
     .then(preference => {
-        const selectedPractice = preference.find(preference => preference.prac_id === selectedPracticeId);
+        const selectedPractice = preference.find(preference => preference.pref_prac === selectedPracticeId);
         document.getElementById('careAdvice').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
         document.getElementById('iaQuestions').innerHTML = "<strong>Initial Assesment Questions: </strong>" + selectedPractice.ia_questions;
     });
