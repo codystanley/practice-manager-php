@@ -36,6 +36,8 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
         document.getElementById('officePhone').innerHTML = "<strong>Office:</strong> " + selectedPractice.office_phone;
         document.getElementById('backlinePhone').innerHTML = "<strong>Backline:</strong> " + selectedPractice.backline_phone;
         document.getElementById('fax').innerHTML = "<strong>Fax:</strong> " + selectedPractice.fax_phone;
+        document.getElementById('').innerHTML = "<strong>Answering Service:</strong> " + selectedPractice.answering_service;
+
     });
 });
 
@@ -174,6 +176,6 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     .then(preference => {
         const selectedPractice = preference.find(preference => preference.prac_id === selectedPracticeId);
         document.getElementById('careAdvice').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
-        document.getElementById('iaQuestions').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
+        document.getElementById('iaQuestions').innerHTML = "<strong>Initial Assesment Questions: </strong>" + selectedPractice.ia_questions;
     });
 });
