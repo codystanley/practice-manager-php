@@ -29,8 +29,6 @@ $hoursResponse = curl_exec($ch);
 // Check for errors
 if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
-} else {
-    print_r($hoursResponse);
 }
 
 // Close cURL session

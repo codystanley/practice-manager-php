@@ -22,49 +22,74 @@
 
         <div class="row">
             <div class="col-12 gy-4" id="practiceHeader">
-                <h4 id="practiceName" class="text-center text-primary" style="color: rgb(9, 104, 184) !important"></h4>
+                <h3 id="practiceName" class="text-center text-primary" style="color: rgb(9, 104, 184) !important"></h3>
             </div><!-- #practiceHeader -->
         </div><!-- .row -->
 
         <div class="row">
             <div class="col-6 gy-4" id="officeInfo">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddress" aria-expanded="false" aria-controls="collapseAddress">
-                    Address
-                </button>
-                
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePhones" aria-expanded="false" aria-controls="collapsePhones">
-                    Phones
-                </button>
+                <h5>Office Information <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
 
-                <div class="collapse" id="collapseAddress">
-                    <div class="card card-body" id="practiceAddress"><!-- scripts content --></div>
+                <div class="card mb-3">
+                    <div class="card-header">Address</div>
+
+                    <div class="card-body">
+                        <div id="practiceAddress" class="card-text"><!-- script.js content--></div>
+                    </div>
                 </div>
 
-                <div class="collapse" id="collapsePhones">
-                    <div id="phonesCard" class="card">
-                        <ul class="list-group list-group-flush">
-                            <li id="officePhone" class="list-group-item"><!-- scripts content --></li>
-                            <li id="backlinePhone" class="list-group-item"><!-- scripts content --></li>
-                            <li id="fax" class="list-group-item"><!-- scripts content --></li>
-                        </ul>
-                    </div><!-- #phonesCard -->
-                </div><!-- #collapsePhones -->
+                <div id="phonesCard" class="card mb-3">
+                    <div class="card-header">Phones/Fax</div>
+                    <ul class="list-group list-group-flush">
+                        <li id="officePhone" class="list-group-item"><!-- script.js content--></li>
+                        <li id="backlinePhone" class="list-group-item"><!-- script.js content--></li>
+                        <li id="fax" class="list-group-item"><!-- script.js content--></li>
+                      </ul>
+                </div>
+                
 
             </div><!-- #officeInfo -->
 
             <div class="col-6 gy-4" id="officeHours">
-                <h4>Office Hours</h4>
-                    
+                <h5>Scheduling <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
+
+                <div id="hoursCard" class="card mb-3">
+                    <div class="card-header">Office Hours</div>
+                    <ul class="list-group list-group-flush">
+                        <li id="timezone" class="list-group-item"><!-- script.js content--></li>
+                        <li id="monday" class="list-group-item"><!-- script.js content--></li>
+                        <li id="tuesday" class="list-group-item"><!-- script.js content--></li>
+                        <li id="wednesday" class="list-group-item"><!-- script.js content--></li>
+                        <li id="thursday" class="list-group-item"><!-- script.js content--></li>
+                        <li id="friday" class="list-group-item"><!-- script.js content--></li>
+                        <li id="saturday" class="list-group-item"><!-- script.js content--></li>
+                        <li id="sunday" class="list-group-item"><!-- script.js content--></li>
+                    </ul>
+                </div><!-- #hoursCard-->
+                
+                <div id="onCallCard" class="card mb-3">
+                    <div class="card-header">On-Call Schedule Info</div>
+                    <ul class="list-group list-group-flush">
+                        <li id="schedStart" class="list-group-item"><!-- script.js content--></li>
+                        <li id="default" class="list-group-item"><!-- script.js content--></li>
+                        <li id="ocNotes" class="list-group-item"><!-- script.js content--></li>
+                    </ul>
+                </div><!-- #onCallCard-->
+
             </div><!-- #officeHours -->
         </div><!-- .row -->
 
         <div class="row">
 
             <div class="col-6 gy-4" id="contactInfo">
+                <h5>Contacts <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
                 
+                <!-- script.js content-->
+
             </div><!-- #contactInfo -->
+
             <div class="col-6 gy-4" id="preferences">
-                <h4>Preferences</h4>
+                <h5>Preferences <a class="card-link btn btn-outline-danger" href="#" role="button">Edit</a></h5>
             </div>
         </div><!-- .row -->
     </div><!-- .container  -->
