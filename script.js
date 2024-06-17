@@ -174,5 +174,6 @@ document.getElementById('practiceDropdown').addEventListener('change', function(
     .then(preference => {
         const selectedPractice = preference.find(preference => preference.prac_id === selectedPracticeId);
         document.getElementById('careAdvice').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
+        document.getElementById('iaQuestions').innerHTML = "<strong>Care Advice Detail: </strong>" + selectedPractice.care_advice;
     });
 });
