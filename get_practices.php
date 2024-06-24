@@ -30,7 +30,8 @@ $practiceResponse = curl_exec($ch);
 
 // Check for errors
 if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
+    $error_message = "Curl Error: " . curl_errno($ch) . " - " . curl_error($ch);
+    return $error_message;
 }
 
 // Close cURL session
@@ -39,5 +40,5 @@ curl_close($ch);
 header('Content-Type: application/json'); // Set the header
 
 // Output the response
-echo $practiceResponse;
+return $practiceResponse;
 ?>
