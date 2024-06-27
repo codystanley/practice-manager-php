@@ -1,44 +1,41 @@
 <?php
+$host = '34.23.248.39';
+$db   = 'practice_manager';
+$user = 'pm-user';
+$pass = 'Password123!';
 
-// Fetch practice data from the AppSheet app
-require_once 'connections.php';
 
-$tableName = "Practices";
+$dsn = "mysql:host=$host;dbname=$db";
 
-$url = "https://www.appsheet.com/api/v2/apps/$appId/tables/$tableName/Find";
+try {
+    // Set PDO options for timeouts
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_TIMEOUT => 5 // Set a 5-second timeout
+    ];
 
-// Create the request body (adjust Locale, Location, Timezone, and UserSettings as needed)
-$requestBody = json_encode([
-    "Action" => "Find",
-    "Properties" => (object)[], // Leave this empty to fetch all properties
-    "Rows" => (object)[] // Leave this empty to fetch all rows
-]);
+    $pdo = new PDO($dsn, $user, $pass, $options);
 
-// Initialize cURL session
-$ch = curl_init($url);
+    // Prepare and execute the query
+    $stmt = $pdo->prepare('SELECT * FROM practices');
+    $stmt->execute();
 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "ApplicationAccessKey: $appAccessKey",
-    "Content-Type: application/json"
-]);
-curl_setopt($ch, CURLOPT_POST, true);// Use POST method
-curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody); // Set the request body
+    // Fetch all rows
+    $rows = $stmt->fetchAll();
 
-// Execute cURL session
-$practiceResponse = curl_exec($ch);
+    // Convert rows to JSON
+    $json = json_encode($rows);
 
-// Check for errors
-if (curl_errno($ch)) {
-    $error_message = "Curl Error: " . curl_errno($ch) . " - " . curl_error($ch);
-    return $error_message;
+    // Output the JSON response
+    header('Content-Type: application/json');
+    echo $json;
+
+} catch (PDOException $e) {
+    // Handle PDO exceptions, including timeouts
+    http_response_code(500); // Set a 500 Internal Server Error status
+    echo json_encode(['error' => 'Database connection error: ' . $e->getMessage()]);
+} catch (Exception $e) {
+    // Handle general exceptions
+    http_response_code(500);
+    echo json_encode(['error' => 'Error: ' . $e->getMessage()]);
 }
-
-// Close cURL session
-curl_close($ch);
-
-header('Content-Type: application/json'); // Set the header
-
-// Output the response
-return $practiceResponse;
-?>
